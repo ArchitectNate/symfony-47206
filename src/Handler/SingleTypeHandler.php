@@ -2,14 +2,13 @@
 
 namespace App\Handler;
 
-use App\Message\UnionType;
-use App\Message\UnionType2;
+use App\Message\SingleType;
 use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 
-class UnionTypeHandler
+class SingleTypeHandler
 {
     #[AsMessageHandler]
-    public function unionType(UnionType|UnionType2 $message): void
+    public function unionType(SingleType $message): void
     {
         echo $message->getData() . PHP_EOL;
     }
